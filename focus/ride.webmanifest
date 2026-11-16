@@ -1,0 +1,19 @@
+{
+  "name": "FOCUS Ride Companion · Konzeptstudie",
+  "short_name": "Ride Companion",
+  "description": "Unabhängige interaktive Bewerbungsstudie von Sven Preuß.",
+  "lang": "de",
+  "start_url": "./prototyp.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f4ee",
+  "theme_color": "#101412",
+  "icons": [
+    {
+      "src": "assets/focus-app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
