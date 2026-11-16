@@ -1,0 +1,7 @@
+"use strict";
+document.querySelectorAll("[data-print]").forEach(function(button){button.addEventListener("click",function(){window.print();});});
+const interestForm=document.getElementById("interest-form");
+if(interestForm){interestForm.addEventListener("submit",function(event){event.preventDefault();const labels=Array.from(interestForm.querySelectorAll('input[type="checkbox"]:checked')).map(function(el){return el.dataset.label;});document.getElementById("interest-result").textContent=labels.length?"Deine Demo-Auswahl: "+labels.join(", ")+". Es wurden keine Daten gespeichert, keine Anmeldung vorgenommen und keine Nachricht versendet.":"Keine Marketinginteressen gewählt. Die Fahrerfunktionen bleiben im Konzept vollständig nutzbar.";});}
+
+const funnel=document.getElementById("funnel-form");
+if(funnel){const recalc=function(){const value=function(name,max){const n=Number(funnel.elements[name].value);return Number.isFinite(n)?Math.max(0,Math.min(max,n)):0;};const people=value("active",1000000),interest=people*value("interest",100)/100,rides=interest*value("rides",100)/100,sales=rides*value("sales",100)/100;[["funnel-active",people],["funnel-interest",interest],["funnel-rides",rides],["funnel-sales",sales]].forEach(function(item){document.getElementById(item[0]).textContent=item[1].toLocaleString("de-DE",{maximumFractionDigits:1});});};funnel.addEventListener("input",recalc);recalc();}
