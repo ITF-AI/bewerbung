@@ -15,8 +15,8 @@
   function bounded(value,min,max,fallback){const n=typeof value==="number"||typeof value==="string"?Number(value):NaN;return Number.isFinite(n)?Math.max(min,Math.min(max,n)):fallback;}
   function calculate(raw){
     raw=raw||{};
-    const route=routes[raw.route]||routes.nature;
-    const wx=weather[raw.weather]||weather.dry;
+    const route=raw.routeData||routes[raw.route]||routes.nature;
+    const wx=raw.weatherData||weather[raw.weather]||weather.dry;
     const nominal=bounded(raw.capacity,200,1500,625);
     const health=bounded(raw.health,50,100,90)/100;
     const battery=bounded(raw.battery,0,100,65);
@@ -41,3 +41,4 @@
   }
   root.RideModel={routes:routes,weather:weather,calculate:calculate};
 })(typeof window!=="undefined"?window:globalThis);
+
