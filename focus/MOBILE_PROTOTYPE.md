@@ -4,7 +4,7 @@ Stand: 18. November 2026 (Europe/Berlin). Unabhängige Bewerbungsstudie von Sven
 
 ## Funktionierender Kern
 
-- Wetterprognosen automatisch von Open-Meteo, mit aktuellem Wetter und stündlichen Prognosen.
+- Wetterprognosen automatisch von Open-Meteo, mit aktuellem Wetter und stündlichen Prognosen. Bei Ausfall wechselt die App automatisch zu DWD-Prognosen über Bright Sky. Prognoseort und Entfernung werden dann angezeigt, Tageslicht wird astronomisch berechnet.
 - Drei echte Rundtouren ab dem Startpunkt über BRouter, Radprofil trekking, auf OpenStreetMap. Eine kompakte Alternative und zwei Runden in unterschiedlichen Richtungen. Keine erfundenen Strecken im mobilen Companion.
 - Startpunkt zunächst ausdrücklich als Beispielort Tettnang. Orts-/Postleitzahlsuche, optional GPS nach Nutzeraktion. Kein automatischer GPS-Zugriff.
 - Routenvergleich nach Fahrzeit, Wetter, Böen, Niederschlag, Tageslicht, amtlichen Warnungen und modellierter Akkureserve. Empfehlungen sind regelbasiert und mit ihren Gründen sichtbar; kein LLM-Dienst wird aufgerufen.
@@ -17,7 +17,7 @@ Stand: 18. November 2026 (Europe/Berlin). Unabhängige Bewerbungsstudie von Sven
 
 ## Nachweise
 
-22 automatisierte Prüfungen der Entscheidungslogik: `node --test focus/tests/ride-live.test.cjs`.
+25 automatisierte Prüfungen der Entscheidungslogik: `node --test focus/tests/ride-live.test.cjs`.
 
 Reale API-Antworten für drei Runden bei Tettnang erhalten: 12,925 km / 56 hm, 19,607 km / 247 hm und 21,902 km / 99 hm. Dies ist ein technischer Prüflauf, keine dauerhafte Tour- oder Wetterzusage. Open-Meteo-Batch für sieben unterschiedliche Prognoseorte und aktueller DWD-Feed erfolgreich abgerufen. HTTP 200 und browserfähige CORS-Antworten aller drei Anbieter geprüft.
 
@@ -40,3 +40,5 @@ Schwarz-Weiß-Gestaltung, FOCUS-Wortmarke und Markenfoto bleiben aus der bisheri
 - https://www.dwd.de/warnungen
 - https://s3.eu-central-1.amazonaws.com/app-prod-static.warnwetter.de/v16/gemeinde_warnings_v2.json
 - https://www.openstreetmap.org/copyright
+
+Zusätzliche Wetterquelle und Dokumentation: https://brightsky.dev/ und https://brightsky.dev/docs/
