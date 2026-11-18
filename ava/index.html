@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07142c"><meta name="description" content="Unabhängiger Demonstrationsprototyp für ein nachvollziehbares AI Assessment.">
+  <title>AVA — AI Assessment Demo</title><link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="topbar"><div class="topinner"><a class="brand" href="#start" aria-label="AVA Startseite"><span class="mark">A</span><span>AVA <small>AI ASSESSMENT</small></span></a><span class="independent">UNABHÄNGIGE DEMO</span><button id="reset" class="textbutton" type="button">Neu starten ↗</button></div></header>
+<main id="main" class="shell"><aside class="sidebar" aria-label="Assessment Navigation"><div class="sidebar-heading">DEIN ASSESSMENT <span>01 / 04</span></div><h2>Denken.<br>Prüfen.<br><em>Entscheiden.</em></h2><p>Vier Perspektiven auf den praktischen und reflektierten Umgang mit KI.</p><nav id="nav"></nav><div class="sidebar-note"><span class="status-dot"></span> Lokal in diesem Browser gespeichert</div></aside>
+<section class="maincol"><div class="mobile-title"><span class="eyebrow">AVA / AI ASSESSMENT</span><h1>Denken. Prüfen. Entscheiden.</h1></div><div class="progress-header"><span id="progress-label">0 von 4 Aufgaben bearbeitet</span><span id="progress-percent">0 %</span></div><div class="progress-track" role="progressbar" aria-label="Fortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-fill"></div></div><div id="notice" class="notice" role="status" aria-live="polite"></div><div id="view"></div><footer>AVA ist ein unabhängiger Demonstrationsprototyp von Sven Preuß. Keine offizielle Anwendung von Deyan7.</footer></section></main>
+<script type="module" src="./src/app.js"></script>
+</body></html>
